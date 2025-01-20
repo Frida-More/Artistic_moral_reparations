@@ -1,16 +1,14 @@
 
-#Final analysis
+#Final analysis 21 cases 3 conditions
 
 rm(list = ls())
 library(QCA)
 library(SetMethods)
 install.packages('moments')
 library(moments)
-install.packages("usethis")
 
 setwd("~/Documents/RData")
 
-#Rudi <- read.csv("Raw12J.csv", row.names = 1)
 Rudi <- read.csv("Last_M_Data.csv", row.names = 1)
 
 #########------Calibration Full Coherence----------#######
@@ -21,7 +19,7 @@ Rudi$FULCO <- calibrate(Rudi$Cohe,
                         c(0, 50, 100) 
 )
 
-#########------Calibrate High communicability-------######
+#########------Calibrate High Communicability-------######
 # Comm: raw data  to HICOM: calibrated data
 
 Rudi$HICOM <- calibrate(Rudi$Comm, 
